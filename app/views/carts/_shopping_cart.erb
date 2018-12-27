@@ -1,0 +1,17 @@
+<%= if !product_item.nil? && product.item.errors.any %>
+<div class="alert something is wrong">
+  <ul>
+    <% @product_item.errors.full_messages.each do |message| %>
+    <li> <%= message %> </li>
+    <% end %>
+  </ul>
+</div>
+<% if @product_items.size == 0 %>
+<p>
+  There are no items in your shopping cart. Please go back to the <%= link_to, "Dessert page", home_path %> and add some items to your cart.
+</p>
+  <% else %>
+  <% @product_items.each do |product_item| %>
+  <%= render 'carts/cart_row', product: product_item.product, product_item: product_item, show_total: true %>
+  <% end %>
+<% end %>
