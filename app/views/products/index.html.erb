@@ -1,7 +1,9 @@
-<h1>Desserts Index</h1>
 
+<div class="row">
+  <div class="col-xs-6 col-xs-offset-3">
+    <h1>Desserts for Sale</h1>
  <% @products.each do |product| %>
-  Name: <%= product.name %> <br>
-  Price: <%= product.price %>
-  <br><br>
-  <% end %>
+      <%= render "product_row", product: product, product_item: @product_item %>
+    <% end %>
+  </div>
+</div>

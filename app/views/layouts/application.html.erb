@@ -2,19 +2,25 @@
 <html>
   <head>
     <title>Rachels Dessert App</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
+    <!--  csp_meta_tag -->
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <% if request.ssl? %>
+      <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
+      <%= javascript_include_tag 'https://macdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
+      <% else %>
+      <%= stylesheet_link_tag 'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
+      <%= javascript_include_tag 'http://macdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
+      <% end %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= csrf_meta_tags %>
+
   </head>
 
   <body>
-    <h1> <%= link_to 'Rachels Desserts', home_path %> </h1>
-    <div class="col-xs-6 text-right">
+    <div class="col-md-10 text-left">
+      <h1> <%= link_to 'Rachels Desserts', home_path %> </h1>
+    </div>
       <h2 class="cart-text"> <%= render 'layouts/cart_text' %> </h2>
-      </div>
-
     <%= yield %>
   </body>
 </html>

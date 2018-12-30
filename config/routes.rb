@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
+  get '/rachels/desserts', to: 'products#index', as: 'home'
+  get '/welcome', to: 'products#welcome', as: 'welcome'
   resources :product_items, only: [:create, :update, :destroy]
   resource :cart, only: :show
+  # root to: "products#index"
 
-  get '/rachels/desserts', to: 'products#index', as: 'home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
