@@ -1,9 +1,10 @@
 <div class="well">
   <div class="row">
-    <div class="col-xs-8">
+    <div class="col-md-10">
       <h4><%= product.name %></h4>
+      <img src="/images/black_magic.png" class="img-responsive" alt="chocoalte cake"/>
     </div>
-          <%= form_for product_item, remote: true do |f| %>
+          <%= form_for product_item do |f| %>
           <h4 class="text-right">
             Price: <span style="color: green"> <%= number_to_currency product.price %></span>
           </h4>
@@ -11,7 +12,7 @@
             <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
             <div class="input-group-btn">
               <%= f.hidden_field :product_id, value: product.id %>
-              <%= f.submit "Add to Cart", class: "btn btn-primary" %>
+              <%=  f.submit "Add to Cart", class: "btn btn-primary" %>
             </div>
           </div>
           <% end %>

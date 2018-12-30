@@ -9,10 +9,11 @@ puts  'Deleting all Prodcuts'
 Product.destroy_all
 puts 'Creating the desserts! Yum!'
 Product.create(name: 'Black Magic', price: 6.00, active: true)
-Product.create(name: 'Blondie', price: 6.00, active: true)
+Product.create(name: 'Smore\'s Brownie', price: 5.50, active: true)
 Product.create(name: 'Crumb Cake', price: 6.00, active: true)
-Product.create(name: 'Chocolate Chip Cookie', price: 2.00, active: true)
-Product.create(name: 'Carrot Cake', price: 6.00, active: false)
+Product.create(name: 'Black and White cookies', price: 2.00, active: true)
+Product.create(name: 'Cinnamon Buns', price: 6.00, active: true)
+Product.create(name: 'Croissants', price: 3.00, active: true)
 puts 'Deleting Order Status'
 OrderStatus.destroy_all
 puts 'Creating Order Status'

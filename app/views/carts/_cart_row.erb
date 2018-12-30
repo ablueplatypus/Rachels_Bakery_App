@@ -3,20 +3,25 @@
   <div class="row">
     <div class="col-xs-8">
       <h4> <%= product.name %></h4>
-      </div>
-    <div class ="col-xs-5">
-      <%= form_for product_item, remote: true do |f| %>
-        <%= f.label 'Price:' %>
+        <%= form_for product_item, remote: true do |f| %>
+      <h4 class ="text-left">
+        Price: <span style="color: green"> <%= number_to_currency product_item.unit_price %></span>
+      </h4>
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-xs-2">
         <%= f.number_field :quantity, value: product_item.quantity.to_i, class: "form-control", min:1 %>
         <%= f.hidden_field :product_id, value: product.id %>
-        <%= f.submit 'Update Quantity'%> <br>
-        <%= button_to "Delete", product_item, {data: { confirm: "Are you sure you want to delete the dessert '#{product_item.product.name}' from your cart?" }, method: :delete, remote: true, class: "btn btn-danger"} %>
+      </div>
+      <div class="col-sm-5">
+      <%= f.submit 'Update Quantity', class: "btn btn-default"%>
+      </div>
+    </div>
         <h4>
         <%= f.label 'Total Price: '%>
         <%= number_to_currency product_item.total_price %>
         </h4>
+        <%= link_to "Delete", product_item, {data: { confirm: "Are you sure you want to delete the dessert '#{product_item.product.name}' from your cart?" }, method: :delete, remote: true, class: "btn btn-danger"} %>
       <% end %>
-      </div>
-
-    </div>
   </div>

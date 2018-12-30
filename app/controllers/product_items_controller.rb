@@ -1,5 +1,5 @@
 class ProductItemsController < ApplicationController
-protect_from_forgery
+
   # def new
   #   @products = Product.all
   #   @product_item = ProductItem.new
@@ -24,7 +24,7 @@ protect_from_forgery
     @order = current_order
     @product_item = @order.product_items.find(params[:id])
     @product_item.destroy
-    @product_items = @order.product_item
+    @product_items = @order.product_items
   end
 private
   def product_item_params
