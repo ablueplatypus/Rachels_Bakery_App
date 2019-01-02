@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2018_12_27_041130) do
     t.string "name"
     t.decimal "price"
     t.boolean "active"
+    t.string "img_location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,1 +1,8 @@
-<%= link_to "#{current_order.product_items.size} Item(s) in Cart (#{number_to_currency current_order.subtotal})", cart_path, class: "btn btn-link" %>
+
+<% if current_order.product_items.size == 0 %>
+  <%= link_to "Your cart is empty: #{current_order.product_items.size},  Amount: #{number_to_currency current_order.subtotal}", cart_path, class: "btn btn-link" %>
+<% elsif current_order.product_items.size == 1 %>
+  <%= link_to "Item in Cart: #{current_order.product_items.size},  Amount: #{number_to_currency current_order.subtotal}", cart_path, class: "btn btn-link" %>
+<% else %>
+  <%= link_to "Items in Cart: #{current_order.product_items.size},  Amount: #{number_to_currency current_order.subtotal}", cart_path, class: "btn btn-link" %>
+<% end %>
