@@ -1,3 +1,19 @@
 // Place all the styles related to the Products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.img_border {
+  text-align: center;
+  // border: 2px solid #A3C0D5;
+  border-radius: 2%;
+}
+
+img:hover {
+  transform: scale(1.1);
+}
+
+.add_to_cart_form {
+  width: 40%;
+  margin-left: auto;
+  margin-right: 120px;
+}

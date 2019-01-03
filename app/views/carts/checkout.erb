@@ -1,0 +1,45 @@
+<div class="checkout-panel">
+    <div class="panel-body">
+      <h2 class="title">Checkout Sooooo Secure Don't Worry!</h2>
+
+
+      <div class="payment-method">
+        <label for="card" class="method card">
+          <div class="card-logos">
+            <%= image_tag("logos/visa-logo.png", size: '100') %>
+            <%= image_tag("logos/mc_logo.png", size: '100') %>
+          </div>
+
+
+      <div class="input-fields">
+        <div class="column-1">
+          <label for="cardholder">Cardholder's Name</label>
+          <input type="text" id="cardholder" placeholder="Enter Your Name" />
+
+          <div class="small-inputs">
+            <div>
+              <label for="date">Valid thru</label>
+              <input type="text" id="date" placeholder="MM / YY" />
+            </div>
+
+            <div>
+              <label for="verification">CVV / CVC *</label>
+              <input type="text" id="verification" placeholder="000"/>
+            </div>
+          </div>
+
+        </div>
+        <div class="column-2">
+          <label for="cardnumber">Card Number</label>
+          <input type="password" id="cardnumber" placeholder="XXXX-XXXX-XXXX-XXXX"/>
+
+          <span class="info">* CVV or CVC is the card security code, unique three digits number on the back of your card separate from its number.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel-footer">
+      <button class="btn back-btn">Back</button>
+      <button class="btn next-btn">Next Step</button>
+    </div>
+  </div>

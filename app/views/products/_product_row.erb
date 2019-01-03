@@ -1,14 +1,10 @@
-<div class="well">
-  <div class="row">
-    <div class="col-xs-6">
+  <div class="img_border">
       <h4><%= product.name %></h4>
-    </div>
-    <div class="col-xs-6 text-right">
-      <h4>Price: <span style="color: green"> <%= number_to_currency product.price %></span></h4>
-    </div>
-      <div class="dessert">
-        <%= image_tag(product.img_location, size:'100') %>
+      <div class="dessert-img">
+        <%= image_tag(product.img_location, size:'150') %>
       </div>
+        <h4>Price: <span class="price-color"> <%= number_to_currency product.price %></span></h4>
+      <div class="add_to_cart_form">
           <%= form_for product_item do |f| %>
           <div class="input-group">
             <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
@@ -18,5 +14,5 @@
             </div>
           </div>
           <% end %>
+      </div>
   </div>
-</div>

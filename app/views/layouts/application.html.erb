@@ -13,19 +13,61 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <style>
+    body {margin: 0;}
+
+    ul.topnav {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #101B22;
+      position: sticky;
+    }
+
+    ul.topnav li {float: left;}
+
+    ul.topnav li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 5px 18px;
+      text-decoration: none;
+    }
+
+    ul.topnav li a:hover:not(.active) {background-color: #213543;}
+
+    ul.topnav li a.active {background-color: #4CAF50;}
+
+    ul.topnav li.right {float: right;}
+
+    @media screen and (max-width: 600px) {
+      ul.topnav li.right,
+      ul.topnav li {float: none;}
+    }
+    </style>
+
   </head>
 
   <body>
-    <div class="row">
-      <div class="col-xs-10 col-md-6 text-left">
-        <h1> <%= link_to 'Rachels Desserts', home_path %> </h1>
-      </div>
+    <div class="waves">
+      <div class="waves-overlay"></div>
+      <div class="waves-another-overlay"></div>
+      <div class="wavves-overlay-damn"></div>
     </div>
-    <div class="row">
-      <div class="col-xs-5 text-left">
-        <h2 class="cart-text"><%= render 'layouts/cart_text' %></h2>
+
+      <div class="header">
+        <h1 style=""> <%= link_to 'Rachels Desserts', home_path %> </h1>
       </div>
-    </div>
+      <ul class="topnav">
+        <li><a class="left" <%= link_to 'Home', home_path %> </a></li>
+        <li><a class="left" <%= link_to 'About', home_path %></a></li>
+        <li><a class="left" <%= link_to 'Menu', home_path %></a></li>
+        <li class="right"><a <%= render 'layouts/cart_text' %> </a></li>
+        <li class="right"><a <%= link_to image_tag("logos/cookie_logo.png", size:'20'), cart_path %> </a></li>
+      </ul>
+      <!-- <div style="text-align: right; margin-right: 50px;">
+      </div> -->
     <%= yield %>
   </body>
 </html>
