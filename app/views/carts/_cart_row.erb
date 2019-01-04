@@ -1,24 +1,55 @@
-<div class="cart-background">
-  <div style="text-align: left; border: solid;">
-      <h4> <%= product.name %></h4>
-      <h4>Price: <span style="color: white"> <%= number_to_currency product_item.unit_price %></span></h4>
-      <div class="dessert-img">
-        <%= image_tag(product.img_location, size:'150') %>
+  <div class="cart-row">
+    <div class="cart-labels">
+      <div class="name-label">
+        <h4> <%= product.name %></h4>
       </div>
-        <%= form_for product_item, remote: true do |f| %>
+      <div class="description-label">
+        <h4>Description</h4>
+      </div>
+      <div class="price-label">
+        <h4>Price</h4>
+      </div>
+      <div class="quantity-label">
+        <h4>Quantity</h4>
+      </div>
+      <div class="button-space">
+      </div>
+      <div class="total-price-label">
+        <h4>Total<h4>
+      </div>
+    </div> <!-- end of carts labels div -->
+
+    <!--cart content div row flex -->
+    <!-- picture div, desc, div, price amount, qty, remove button,subtotal -->
+    <div class="cart-content">
+        <div class="cart-pic">
+          <span><%= image_tag(product.img_location, size:'150') %></span>
+        </div>
+        <div class="cart-description">
+          <p>This is my amzing dessert. It is amazing!!!</p>
+        </div>
+
+        <div class="cart-price">
+          <h4><%= number_to_currency product_item.unit_price %></h4>
+        </div>
+      <div class="from-inline" style="width: 30%;">
+          <%= form_for product_item, remote: true do |f| %>
+          <div class="cart-quantity">
+            <div class="input-group">
+              <%= f.number_field :quantity, value: product_item.quantity.to_i, class: "form-control", min:1 %>
+              <div class="input-group-btn">
+                <%= f.hidden_field :product_id, value: product.id %>
+                <%= f.submit 'Update Quantity', class: "btn btn-default"%>
+              </div>
+            </div>
+          </div>
+       </div>
+       <div class="cart-remove-button">
+         <span class=""><%= link_to "Remove", product_item, {data: { confirm: "Are you sure you want to delete the dessert '#{product_item.product.name}' from your cart?" }, method: :delete, remote: true, class: "btn btn-danger"} %></span>
+       </div>
+       <div class="cart-total-price">
+         <h4><%= number_to_currency product_item.total_price %></h4>
+       </div>
+     </div>
+    <% end %>
   </div>
-      <div class="col-xs-3">
-        <%= f.number_field :quantity, value: product_item.quantity.to_i, class: "form-control", min:1 %>
-        <%= f.hidden_field :product_id, value: product.id %>
-      </div>
-      <div >
-      <%= f.submit 'Update Quantity', class: "btn btn-default"%>
-      </div>
-    </div>
-        <h4>
-        <%= f.label 'Subtotal: '%>
-        <%= number_to_currency product_item.total_price %>
-        </h4>
-        <%= link_to "Delete", product_item, {data: { confirm: "Are you sure you want to delete the dessert '#{product_item.product.name}' from your cart?" }, method: :delete, remote: true, class: "btn btn-danger"} %>
-      <% end %>
-</div>

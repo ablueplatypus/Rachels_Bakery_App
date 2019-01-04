@@ -11,6 +11,7 @@ class ProductItemsController < ApplicationController
     @product_item = @order.product_items.new(product_item_params)
     @order.save
     session[:order_id] = @order.id
+    redirect_to home_path
   end
 
   def update
@@ -18,6 +19,7 @@ class ProductItemsController < ApplicationController
     @product_item = @order.product_items.find(params[:id])
     @product_item.update_attributes(product_item_params)
     @product_items = @order.product_items
+    redirect_to '/cart'
   end
 
   def destroy
@@ -25,6 +27,7 @@ class ProductItemsController < ApplicationController
     @product_item = @order.product_items.find(params[:id])
     @product_item.destroy
     @product_items = @order.product_items
+    redirect_to '/cart'
   end
 private
   def product_item_params

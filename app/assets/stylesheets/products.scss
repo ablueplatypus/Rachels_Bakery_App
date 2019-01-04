@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+  background-image: linear-gradient(#1e4b5a, #badaed);
+}
+
 .img_border {
   text-align: center;
   // border: 2px solid #A3C0D5;
