@@ -8,12 +8,10 @@
 </div>
 <% end %>
 <% if @product_items.size == 0 %>
-<div class = "row">
-  <div class="col-xs-12 col-md-8">
-  <p class ="text-center">
+<div class= "row">
+  <p class="text-center">
     There are no items in your shopping cart. Please go back to the <%= link_to "Dessert page", home_path %> and add some items to your cart.
   </p>
-  </div>
 </div>
 <% else %>
     <% @product_items.each do |product_item| %>
