@@ -25,7 +25,7 @@ body {
 
 ul.topnav {
   list-style-type: none;
-  margin-top: 8.5vh;
+  margin-top: 8vh;
   padding: 0;
   overflow: hidden;
   background-color: #101B22;
@@ -104,6 +104,10 @@ img {
   }
 }
 
+.rachels-logo {
+margin-top: 45px;
+}
+
 /* .cart {
   border: 1px solid;
 } */
@@ -122,6 +126,11 @@ browser to render. That's:
 ...or shorthand:
 transform: translate(-20px, 20px) rotate(10deg) scale(2);
 */
+.banner {
+  height: 18vw;
+  min-height: 50px;
+  width: inherit;
+}
 .waves {
     background: no-repeat url('http://www.rachelsfireisland.com/wp-content/uploads/2017/12/test.jpg') center top;
     background-size: cover;
@@ -134,11 +143,6 @@ transform: translate(-20px, 20px) rotate(10deg) scale(2);
     background-position: 0 -95px;
 }
 
-.banner {
-  height: 19vw;
-  min-height: 50px;
-  width: inherit;
-}
 
 .waves-overlay,
 .waves-another-overlay,
@@ -184,4 +188,16 @@ transform: translate(-20px, 20px) rotate(10deg) scale(2);
     }
 }
 
-/*----SHOPPING CART-----*/
+/* ------FOOTER-------- */
+/* .footer {
+  position: absolute;
+  width: 100%;
+  height: 3vw;
+  bottom: -110%;
+  background-color: #1a3546;
+}
+.footer-text {
+  text-align: center;
+  margin: 0 0 10px;
+  color: #fff;
+} */

@@ -9,14 +9,19 @@
 
 
 /*-----CART CSS-----*/
+.cart-container {
+  background-color: #fff;
+  height: 100%;
+  margin-top: 0;
+}
 
 .checkout_button {
   /* display: flex;
   flex-flow: row; */
   position: fixed;
   z-index: 100;
-  right: 162px;
-  bottom: 100px;
+  right: 20px;
+  bottom: 145px;
 }
 
 // .cart-border {
@@ -36,11 +41,6 @@
 //   justify-content: space-around;
 // }
 
-.cart-container {
-  background-color: #fff;
-  height: 100%;
-  margin-top: 0;
-}
 
 .cart-labels {
   display: flex;
@@ -129,6 +129,9 @@
   // padding-bottom: 100px;
 }
 
+.catd-logos {
+  transform: none;
+}
 .panel-body {
   background-color: #fff;
 

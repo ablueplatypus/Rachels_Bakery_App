@@ -1,7 +1,7 @@
   <div class="img_border">
       <h4><%= product.name %></h4>
       <div class="dessert-img">
-        <%= image_tag(product.img_location, size:'150') %>
+        <%= link_to image_tag(product.img_location, size:'150'), cart_path %>
       </div>
         <h4>Price: <span class="price-color"> <%= number_to_currency product.price %></span></h4>
       <div class="add_to_cart_form">

@@ -1,11 +1,12 @@
 
-<div>
+  <div>
     <h2 class="center-text">Desserts for Sale</h2>
+  </div>
 <div class="dessert-box">
  <% @products.each do |product| %>
         <div style="width: 450px; margin-bottom: 2%;">
           <%= render "product_row", product: product, product_item: @product_item %>
         </div>
     <% end %>
-    </div>
 </div>
+    
