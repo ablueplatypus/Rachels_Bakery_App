@@ -12,6 +12,10 @@ body {
   border-radius: 2%;
 }
 
+img {
+  will-change: transform;
+}
+
 img:hover {
   transform: scale(1.1);
 }
